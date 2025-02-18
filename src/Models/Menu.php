@@ -21,7 +21,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Menu extends Model
 {
+    use ClearCache;
     protected $guarded = [];
+
 
     public function getTable(): string
     {

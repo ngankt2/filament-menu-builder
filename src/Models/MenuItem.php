@@ -32,6 +32,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  */
 class MenuItem extends Model
 {
+    use ClearCache;
     protected $guarded = [];
 
     protected $with = ['linkable'];

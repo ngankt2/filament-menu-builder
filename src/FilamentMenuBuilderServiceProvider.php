@@ -29,8 +29,7 @@ class FilamentMenuBuilderServiceProvider extends PackageServiceProvider
                 $command
                     ->publishConfigFile()
                     ->publishMigrations()
-                    ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub('datlechin/filament-menu-builder');
+                    ->askToRunMigrations();
             });
 
         $configFileName = $package->shortName();
