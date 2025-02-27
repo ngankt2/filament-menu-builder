@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('is_visible')->default(true);
+            $table->string('language')->default('en');
             $table->timestamps();
         });
 
@@ -27,6 +28,8 @@ return new class extends Migration
             $table->string('url')->nullable();
             $table->string('target', 10)->default(LinkTarget::Self);
             $table->integer('order')->default(0);
+            $table->string('style_class')->nullable();
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
 

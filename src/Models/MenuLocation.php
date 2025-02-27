@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Cache;
 class MenuLocation extends Model
 {
     use ClearCache;
+
     protected $guarded = [];
 
     public function getTable(): string
@@ -41,16 +42,16 @@ class MenuLocation extends Model
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      */
-    static function getMenuByLocation($location)
+    static function getMenuByLocation($location, $language = 'en'): mixed
     {
         try {
             $cacheKey = "zi_cache:menu:{$location}";
             if (request()->get('cache')) {
                 Cache::forget($cacheKey);
             }
-            return Cache::remember($cacheKey, 3600 * 24, function () use ($location) {
+            return Cache::remember($cacheKey, 3600 * 24, function () use ($location, $language) {
                 return FilamentMenuBuilderPlugin::get()
-                    ->getMenuLocationModel()::with(['menu' => fn(Builder $query) => $query->where('is_visible', true)->with('menuItems')])
+                    ->getMenuLocationModel()::with(['menu' => fn(Builder $query) => $query->where('is_visible', true)->where('language', $language)->with('menuItems')])
                     ->where('location', $location)
                     ->first()?->menu;
             });
