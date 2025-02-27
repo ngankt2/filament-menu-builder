@@ -50,12 +50,12 @@ class MenuResource extends Resource
         return $form
             ->columns(1)
             ->schema([
-                Components\Grid::make(4)
+                Components\Grid::make(12)
                     ->schema([
                         Components\TextInput::make('name')
                             ->label(__('filament-menu-builder::menu-builder.resource.name.label'))
                             ->required()
-                            ->columnSpan(3),
+                            ->columnSpan(6),
 
                         Components\Select::make('language')
                             ->label(__('filament-menu-builder::menu-builder.form.language'))
