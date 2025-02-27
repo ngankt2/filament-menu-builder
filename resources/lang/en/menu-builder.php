@@ -5,6 +5,7 @@ declare(strict_types=1);
 return [
     'form' => [
         'title' => 'Title',
+        'language' => 'Language',
         'url' => 'URL',
         'linkable_type' => 'Type',
         'linkable_id' => 'ID',

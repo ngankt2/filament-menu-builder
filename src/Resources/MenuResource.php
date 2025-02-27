@@ -57,6 +57,11 @@ class MenuResource extends Resource
                             ->required()
                             ->columnSpan(3),
 
+                        Components\Select::make('language')
+                            ->label(__('filament-menu-builder::menu-builder.form.language'))
+                            ->options(collect(__('content_languages'))->pluck('name', 'code'))
+                            ->columnSpan(3),
+
                         Components\ToggleButtons::make('is_visible')
                             ->grouped()
                             ->options([
