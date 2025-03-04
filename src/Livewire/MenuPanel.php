@@ -41,6 +41,8 @@ class MenuPanel extends Component implements HasForms
 
     public array $items = [];
 
+    public  $lsItems;
+
     #[Validate('required|array')]
     public array $data = [];
 
@@ -61,6 +63,10 @@ class MenuPanel extends Component implements HasForms
 
             return $item;
         }, $menuPanel->getItems());
+
+        //$this->lsItems = $menuPanel->getItemsWithPaginate();
+        //50 tài khoản hệ thống
+        //mỗi tài khoản 1 tài khoản kéo dc khoảng 20 ref - 30 ref
     }
 
     public function getItems(): array

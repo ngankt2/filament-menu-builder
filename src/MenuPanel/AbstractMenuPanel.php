@@ -118,4 +118,8 @@ abstract class AbstractMenuPanel implements MenuPanel
     {
         return $this->perPage;
     }
+    public function getItemsWithPaginate(): mixed
+    {
+        return [];
+    }
 }

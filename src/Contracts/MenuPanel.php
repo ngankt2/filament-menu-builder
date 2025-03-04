@@ -12,6 +12,8 @@ interface MenuPanel
 
     public function getItems(): array;
 
+    public function getItemsWithPaginate();
+
     public function getSort(): int;
 
     public function getDescription(): ?string;
