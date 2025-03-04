@@ -2,12 +2,9 @@
     "name": "filament/filament-menu-builder",
     "description": "Create and manage menus and menu items",
     "keywords": [
-        "datlechin",
         "laravel",
         "filament-menu-builder"
     ],
-    "homepage": "https://github.com/datlechin/filament-menu-builder",
-
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -26,17 +23,6 @@
             "Wiz\\FilamentMenuBuilder\\": "src/",
             "Wiz\\FilamentMenuBuilder\\Database\\Factories\\": "database/factories/"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Wiz\\FilamentMenuBuilder\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,

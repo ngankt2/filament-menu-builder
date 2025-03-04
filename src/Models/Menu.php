@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $id
  * @property string $name
  * @property string language
+ * @property string location
  * @property bool $is_visible
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
@@ -22,8 +23,25 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Menu extends Model
 {
-    use ClearCache;
+
     protected $guarded = [];
+
+    protected static function booted(): void
+    {
+        static::deleted(function (self $menu) {
+            MenuItem::where('menu_id', $menu->id)->delete();
+        });
+        static::updating(function (self $menu) {
+            if ($menu->location) {
+                Menu::where('location', $menu->location)->where('language', $menu->language)->update(['location' => null]);
+            }
+        });
+        static::creating(function (self $menu) {
+            if ($menu->location) {
+                Menu::where('location', $menu->location)->where('language', $menu->language)->update(['location' => null]);
+            }
+        });
+    }
 
 
     public function getTable(): string

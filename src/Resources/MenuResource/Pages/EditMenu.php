@@ -34,7 +34,6 @@ class EditMenu extends EditRecord
     {
         return [
             Actions\DeleteAction::make(),
-            $this->getLocationAction(),
         ];
     }
 }

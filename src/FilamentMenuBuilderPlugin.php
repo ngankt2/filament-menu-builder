@@ -97,13 +97,6 @@ class FilamentMenuBuilderPlugin implements Plugin
         return $this;
     }
 
-    public function usingMenuLocationModel(string $model): static
-    {
-        $this->menuLocationModel = $model;
-
-        return $this;
-    }
-
     public function addLocation(string $key, string $label): static
     {
         $this->locations[$key] = $label;

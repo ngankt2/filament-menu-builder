@@ -22,7 +22,6 @@ class ListMenus extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
-            $this->getLocationAction(),
         ];
     }
 }
