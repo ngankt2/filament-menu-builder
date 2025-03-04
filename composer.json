@@ -7,18 +7,8 @@
         "filament-menu-builder"
     ],
     "homepage": "https://github.com/datlechin/filament-menu-builder",
-    "support": {
-        "issues": "https://github.com/datlechin/filament-menu-builder/issues",
-        "source": "https://github.com/datlechin/filament-menu-builder"
-    },
+
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Ngo Quoc Dat",
-            "email": "datlechin@gmail.com",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "php": "^8.2",
         "spatie/laravel-package-tools": "^1.15.0"
@@ -33,13 +23,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Datlechin\\FilamentMenuBuilder\\": "src/",
-            "Datlechin\\FilamentMenuBuilder\\Database\\Factories\\": "database/factories/"
+            "Wiz\\FilamentMenuBuilder\\": "src/",
+            "Wiz\\FilamentMenuBuilder\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Datlechin\\FilamentMenuBuilder\\Tests\\": "tests/"
+            "Wiz\\FilamentMenuBuilder\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -58,10 +48,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Datlechin\\FilamentMenuBuilder\\FilamentMenuBuilderServiceProvider"
+                "Wiz\\FilamentMenuBuilder\\FilamentMenuBuilderServiceProvider"
             ],
             "aliases": {
-                "FilamentMenuBuilder": "Datlechin\\FilamentMenuBuilder\\Facades\\FilamentMenuBuilder"
+                "FilamentMenuBuilder": "Wiz\\FilamentMenuBuilder\\Facades\\FilamentMenuBuilder"
             }
         }
     },

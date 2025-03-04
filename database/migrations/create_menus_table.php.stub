@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Datlechin\FilamentMenuBuilder\Enums\LinkTarget;
-use Datlechin\FilamentMenuBuilder\Models\Menu;
-use Datlechin\FilamentMenuBuilder\Models\MenuItem;
+use Wiz\FilamentMenuBuilder\Enums\LinkTarget;
+use Wiz\FilamentMenuBuilder\Models\Menu;
+use Wiz\FilamentMenuBuilder\Models\MenuItem;
 
 return new class extends Migration
 {

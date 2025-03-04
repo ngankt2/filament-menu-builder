@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\Concerns;
+namespace Wiz\FilamentMenuBuilder\Concerns;
 
 use Illuminate\Database\Eloquent\Builder;
 

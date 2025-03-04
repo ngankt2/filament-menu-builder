@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\Models;
+namespace Wiz\FilamentMenuBuilder\Models;
 
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Cache;
  * @property string $location
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
- * @property-read \Datlechin\FilamentMenuBuilder\Models\Menu $menu
+ * @property-read \Wiz\FilamentMenuBuilder\Models\Menu $menu
  */
 class MenuLocation extends Model
 {

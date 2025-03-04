@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-use Datlechin\FilamentMenuBuilder\Tests\TestCase;
+use Wiz\FilamentMenuBuilder\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

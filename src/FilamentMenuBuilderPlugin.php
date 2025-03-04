@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder;
+namespace Wiz\FilamentMenuBuilder;
 
 use Closure;
-use Datlechin\FilamentMenuBuilder\Contracts\MenuPanel;
-use Datlechin\FilamentMenuBuilder\Models\Menu;
-use Datlechin\FilamentMenuBuilder\Models\MenuItem;
-use Datlechin\FilamentMenuBuilder\Models\MenuLocation;
-use Datlechin\FilamentMenuBuilder\Resources\MenuResource;
+use Wiz\FilamentMenuBuilder\Contracts\MenuPanel;
+use Wiz\FilamentMenuBuilder\Models\Menu;
+use Wiz\FilamentMenuBuilder\Models\MenuItem;
+use Wiz\FilamentMenuBuilder\Models\MenuLocation;
+use Wiz\FilamentMenuBuilder\Resources\MenuResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;

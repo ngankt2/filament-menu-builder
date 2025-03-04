@@ -1,6 +1,6 @@
 <?php
 
-namespace Datlechin\FilamentMenuBuilder\Models;
+namespace Wiz\FilamentMenuBuilder\Models;
 
 Trait ClearCache
 {

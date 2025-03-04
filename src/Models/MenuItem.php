@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\Models;
+namespace Wiz\FilamentMenuBuilder\Models;
 
-use Datlechin\FilamentMenuBuilder\Contracts\MenuPanelable;
-use Datlechin\FilamentMenuBuilder\Enums\LinkTarget;
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\Contracts\MenuPanelable;
+use Wiz\FilamentMenuBuilder\Enums\LinkTarget;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -27,8 +27,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property-read \Illuminate\Database\Eloquent\Collection|MenuItem[] $children
  * @property-read int|null $children_count
  * @property-read \Illuminate\Database\Eloquent\Model|MenuPanelable|null $linkable
- * @property-read \Datlechin\FilamentMenuBuilder\Models\Menu $menu
- * @property-read \Datlechin\FilamentMenuBuilder\Models\MenuItem|null $parent
+ * @property-read \Wiz\FilamentMenuBuilder\Models\Menu $menu
+ * @property-read \Wiz\FilamentMenuBuilder\Models\MenuItem|null $parent
  */
 class MenuItem extends Model
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\Concerns;
+namespace Wiz\FilamentMenuBuilder\Concerns;
 
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 use Filament\Actions\Action;
 use Filament\Forms\Components;
 use Filament\Notifications\Notification;

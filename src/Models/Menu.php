@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\Models;
+namespace Wiz\FilamentMenuBuilder\Models;
 
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -15,9 +15,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property bool $is_visible
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\Datlechin\FilamentMenuBuilder\Models\MenuLocation[] $locations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Wiz\FilamentMenuBuilder\Models\MenuLocation[] $locations
  * @property-read int|null $locations_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\Datlechin\FilamentMenuBuilder\Models\MenuItem[] $menuItems
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Wiz\FilamentMenuBuilder\Models\MenuItem[] $menuItems
  * @property-read int|null $menuItems_count
  */
 class Menu extends Model

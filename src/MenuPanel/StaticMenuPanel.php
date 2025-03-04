@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\MenuPanel;
+namespace Wiz\FilamentMenuBuilder\MenuPanel;
 
 use Closure;
 

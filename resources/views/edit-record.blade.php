@@ -35,15 +35,15 @@
 
     <div class="grid grid-cols-12 gap-4" wire:ignore>
         <div class="flex flex-col col-span-12 gap-4 sm:col-span-4">
-            @foreach (\Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin::get()->getMenuPanels() as $menuPanel)
+            @foreach (\Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin::get()->getMenuPanels() as $menuPanel)
                 <livewire:menu-builder-panel :menu="$record" :menuPanel="$menuPanel" />
             @endforeach
 
-            @if (\Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin::get()->isShowCustomLinkPanel())
+            @if (\Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin::get()->isShowCustomLinkPanel())
                 <livewire:create-custom-link :menu="$record" />
             @endif
 
-            @if (\Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin::get()->isShowCustomTextPanel())
+            @if (\Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin::get()->isShowCustomTextPanel())
                 <livewire:create-custom-text :menu="$record" />
             @endif
         </div>

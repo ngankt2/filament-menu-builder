@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder;
+namespace Wiz\FilamentMenuBuilder;
 
-use Datlechin\FilamentMenuBuilder\Livewire\CreateCustomLink;
-use Datlechin\FilamentMenuBuilder\Livewire\CreateCustomText;
-use Datlechin\FilamentMenuBuilder\Livewire\MenuItems;
-use Datlechin\FilamentMenuBuilder\Livewire\MenuPanel;
+use Wiz\FilamentMenuBuilder\Livewire\CreateCustomLink;
+use Wiz\FilamentMenuBuilder\Livewire\CreateCustomText;
+use Wiz\FilamentMenuBuilder\Livewire\MenuItems;
+use Wiz\FilamentMenuBuilder\Livewire\MenuPanel;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;

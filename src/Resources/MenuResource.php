@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\Resources;
+namespace Wiz\FilamentMenuBuilder\Resources;
 
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 use Filament\Forms\Components;
 use Filament\Forms\Components\Component;
 use Filament\Forms\Form;

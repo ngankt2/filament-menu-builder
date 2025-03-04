@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\Livewire;
+namespace Wiz\FilamentMenuBuilder\Livewire;
 
-use Datlechin\FilamentMenuBuilder\Contracts\MenuPanel as ContractsMenuPanel;
-use Datlechin\FilamentMenuBuilder\Models\Menu;
+use Wiz\FilamentMenuBuilder\Contracts\MenuPanel as ContractsMenuPanel;
+use Wiz\FilamentMenuBuilder\Models\Menu;
 use Filament\Forms\Components;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;

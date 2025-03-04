@@ -1,7 +1,7 @@
 @props(['item'])
 
 @php
-    /** @var \Datlechin\FilamentMenuBuilder\Models\MenuItem $item */
+    /** @var \Wiz\FilamentMenuBuilder\Models\MenuItem $item */
 
     $hasChildren = $item->children->isNotEmpty();
 @endphp

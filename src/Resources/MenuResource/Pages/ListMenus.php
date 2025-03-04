@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Datlechin\FilamentMenuBuilder\Resources\MenuResource\Pages;
+namespace Wiz\FilamentMenuBuilder\Resources\MenuResource\Pages;
 
-use Datlechin\FilamentMenuBuilder\Concerns\HasLocationAction;
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\Concerns\HasLocationAction;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 

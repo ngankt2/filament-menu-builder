@@ -52,7 +52,7 @@ return [
 Add the plugin to `AdminPanelProvider`:
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 $panel
     ...
@@ -66,7 +66,7 @@ $panel
 Locations are the places where you can display menus in the frontend. You can add locations in the `AdminPanelProvider`:
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 $panel
     ...
@@ -82,7 +82,7 @@ The first argument is the key of the location, and the second argument is the ti
 Alternatively, you may add locations using an array:
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 $panel
     ...
@@ -108,7 +108,7 @@ By default, the package provides a **Custom Link** menu panel that allows you to
 The panel can be disabled by using the following when configuring the plugin, should you not need this functionality.
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 $panel
     ...
@@ -127,7 +127,7 @@ It is identical to the **Custom Link** menu panel except for the fact that you o
 The panel is disabled by default to prevent visual clutter. To enable the Custom Text menu panel, you can use the following when configuring the plugin.
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 $panel
     ...
@@ -142,8 +142,8 @@ $panel
 The static menu panel allows you to add menu items manually.
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
-use Datlechin\FilamentMenuBuilder\MenuPanel\StaticMenuPanel;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\MenuPanel\StaticMenuPanel;
 
 $panel
     ...
@@ -160,8 +160,8 @@ $panel
 Similarily to locations, you may also add static menu items using an array:
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
-use Datlechin\FilamentMenuBuilder\MenuPanel\StaticMenuPanel;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\MenuPanel\StaticMenuPanel;
 
 $panel
     ...
@@ -183,13 +183,13 @@ $panel
 
 The model menu panel allows you to add menu items from a model.
 
-To create a model menu panel, your model must implement the `\Datlechin\FilamentMenuBuilder\Contracts\MenuPanelable` interface and `\Datlechin\FilamentMenuBuilder\Concerns\HasMenuPanel` trait.
+To create a model menu panel, your model must implement the `\Wiz\FilamentMenuBuilder\Contracts\MenuPanelable` interface and `\Wiz\FilamentMenuBuilder\Concerns\HasMenuPanel` trait.
 
 Then you must also implement the `getMenuPanelTitleColumn` and `getMenuPanelUrlUsing` methods. A complete example of this implementation is as follows:
 
 ```php
-use Datlechin\FilamentMenuBuilder\Concerns\HasMenuPanel;
-use Datlechin\FilamentMenuBuilder\Contracts\MenuPanelable;
+use Wiz\FilamentMenuBuilder\Concerns\HasMenuPanel;
+use Wiz\FilamentMenuBuilder\Contracts\MenuPanelable;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model implements MenuPanelable
@@ -211,8 +211,8 @@ class Category extends Model implements MenuPanelable
 Then you can add the model menu panel to the plugin:
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
-use Datlechin\FilamentMenuBuilder\MenuPanel\ModelMenuPanel;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\MenuPanel\ModelMenuPanel;
 
 $panel
     ...
@@ -232,8 +232,8 @@ $panel
 When registering a menu panel, multiple methods are available allowing you to configure the panel's behavior such as collapse state and pagination.
 
 ```php
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
-use Datlechin\FilamentMenuBuilder\MenuPanel\StaticMenuPanel;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\MenuPanel\StaticMenuPanel;
 
 $panel
     ...
@@ -260,7 +260,7 @@ In some cases, you may want to extend menu and menu items with custom fields. To
 ```php
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 $panel
     ...
@@ -320,12 +320,12 @@ Once done, simply run `php artisan migrate`.
 
 Out of the box, a default Menu Resource is registered with Filament when registering the plugin in the admin provider. This resource can be extended and overridden allowing for more fine-grained control.
 
-Start by extending the `Datlechin\FilamentMenuBuilder\Resources\MenuResource` class in your application. Below is an example:
+Start by extending the `Wiz\FilamentMenuBuilder\Resources\MenuResource` class in your application. Below is an example:
 
 ```php
 namespace App\Filament\Plugins\Resources;
 
-use Datlechin\FilamentMenuBuilder\Resources\MenuResource as BaseMenuResource;
+use Wiz\FilamentMenuBuilder\Resources\MenuResource as BaseMenuResource;
 
 class MenuResource extends BaseMenuResource
 {
@@ -342,7 +342,7 @@ Now pass the custom resource to `usingResource` while registering the plugin wit
 
 ```php
 use App\Filament\Plugins\Resources\MenuResource;
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 $panel
     ...
@@ -362,7 +362,7 @@ Simply extend the default models and then pass the classes when registering the 
 use App\Models\Menu;
 use App\Models\MenuItem;
 use App\Models\MenuLocation;
-use Datlechin\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
+use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 
 $panel
     ...
@@ -379,7 +379,7 @@ $panel
 Getting the assigned menu for a registered location can be done using the `Menu` model. Below we will call the menu assigned to the `primary` location:
 
 ```php
-use Datlechin\FilamentMenuBuilder\Models\Menu;
+use Wiz\FilamentMenuBuilder\Models\Menu;
 
 $menu = Menu::location('primary');
 ```
