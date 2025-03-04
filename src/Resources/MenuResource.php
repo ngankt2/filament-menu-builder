@@ -90,10 +90,16 @@ class MenuResource extends Resource
         return $table
             ->modifyQueryUsing(fn ($query) => $query->withCount('menuItems'))
             ->columns([
+                Tables\Columns\TextColumn::make('id')
+                    ->searchable()
+                    ->sortable()
+                    ->label(__('ID')),
+
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable()
                     ->label(__('filament-menu-builder::menu-builder.resource.name.label')),
+
                 Tables\Columns\TextColumn::make('locations.location')
                     ->label(__('filament-menu-builder::menu-builder.resource.locations.label'))
                     ->default(__('filament-menu-builder::menu-builder.resource.locations.empty'))
@@ -102,6 +108,10 @@ class MenuResource extends Resource
                     ->limitList(2)
                     ->sortable()
                     ->badge(),
+
+                Tables\Columns\TextColumn::make('language')
+                    ->sortable(),
+
                 Tables\Columns\TextColumn::make('menu_items_count')
                     ->label(__('filament-menu-builder::menu-builder.resource.items.label'))
                     ->icon('heroicon-o-link')

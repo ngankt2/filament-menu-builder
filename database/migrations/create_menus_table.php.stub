@@ -36,8 +36,10 @@ return new class extends Migration
         Schema::create(config('filament-menu-builder.tables.menu_locations'), function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Menu::class)->constrained()->cascadeOnDelete();
-            $table->string('location')->unique();
+            $table->string('location');
             $table->timestamps();
+
+            $table->unique(['menu_id', 'location'], 'menu_id_location_unique');
         });
     }
 

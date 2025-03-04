@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Cache;
  * @property int $id
  * @property int $menu_id
  * @property string $location
+ * @property string $language
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
  * @property-read \Wiz\FilamentMenuBuilder\Models\Menu $menu
@@ -42,20 +43,23 @@ class MenuLocation extends Model
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      */
-    static function getMenuByLocation($location, $language = 'en'): mixed
+    static function getMenuByLocation($location, $language = 'vi'): mixed
     {
+
         try {
-            $cacheKey = "zi_cache:menu:{$location}";
+            $cacheKey = "zi_cache:menu:{$location}{$language}";
             if (request()->get('cache')) {
                 Cache::forget($cacheKey);
             }
             return Cache::remember($cacheKey, 3600 * 24, function () use ($location, $language) {
                 return FilamentMenuBuilderPlugin::get()
-                    ->getMenuLocationModel()::with(['menu' => fn(Builder $query) => $query->where('is_visible', true)->where('language', $language)->with('menuItems')])
+                    ->getMenuLocationModel()::with(['menu' => fn(Builder $query) => $query->where('is_visible', true)
+                        ->with('menuItems')])
                     ->where('location', $location)
                     ->first()?->menu;
             });
         } catch (\Exception $exception) {
+            dump($exception->getMessage());
             return [];
         }
 
