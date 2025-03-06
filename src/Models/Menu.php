@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Wiz\FilamentMenuBuilder\Models;
 
+use Illuminate\Support\Facades\Cache;
 use Wiz\FilamentMenuBuilder\FilamentMenuBuilderPlugin;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -65,12 +66,22 @@ class Menu extends Model
             ->with('children');
     }
 
-    public static function location(string $location): ?self
+    public static function getMenuByLocation(string $location, $language = 'en')
     {
-        return self::query()
+        /*return self::query()
             ->where('is_visible', true)
-            ->whereRelation('locations', 'location', $location)
-            ->with('menuItems')
-            ->first();
+            ->where('location', $location)
+            ->where('language', $language)
+            ->with('menuItems:id,menu_id,title,url,target,parent_id,style_class,icon')
+            ->first()?->menuItems;*/
+
+        return Cache::remember('menuCached:' . $location . '__' . $language, 60 * 24, function () use ($location, $language) {
+            return self::query()
+                ->where('is_visible', true)
+                ->where('location', $location)
+                ->where('language', $language)
+                ->with('menuItems')
+                ->first()?->menuItems;
+        });
     }
 }
