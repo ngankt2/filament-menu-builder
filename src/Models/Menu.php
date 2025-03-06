@@ -56,14 +56,9 @@ class Menu extends Model
         ];
     }
 
-    public function locations(): HasMany
-    {
-        return $this->hasMany(FilamentMenuBuilderPlugin::get()->getMenuLocationModel());
-    }
-
     public function menuItems(): HasMany
     {
-        return $this->hasMany(FilamentMenuBuilderPlugin::get()->getMenuItemModel())
+        return $this->hasMany(MenuItem::class)
             ->whereNull('parent_id')
             ->orderBy('parent_id')
             ->orderBy('order')

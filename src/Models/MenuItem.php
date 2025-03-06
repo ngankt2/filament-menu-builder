@@ -58,7 +58,7 @@ class MenuItem extends Model
 
     public function menu(): BelongsTo
     {
-        return $this->belongsTo(FilamentMenuBuilderPlugin::get()->getMenuModel());
+        return $this->belongsTo(Menu::class);
     }
 
     public function parent(): BelongsTo
